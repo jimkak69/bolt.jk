@@ -19,7 +19,9 @@ jobs:
 
       - name: Replace API Key in source
         run: |
-          sed -i "s|REPLACE_WITH_API_KEY|${{ secrets.OPENROUTER_API_KEY }}|g" services/geminiService.ts
+          API_KEY="${{ secrets.OPENROUTER_API_KEY }}"
+          ESCAPED_KEY=$(printf '%s\n' "$API_KEY" | sed -e 's/[\/&]/\\&/g')
+          sed -i "s|REPLACE_WITH_API_KEY|$ESCAPED_KEY|g" services/geminiService.ts
 
       - name: Setup Node.js
         uses: actions/setup-node@v3
