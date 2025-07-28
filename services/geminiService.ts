@@ -2,7 +2,7 @@ import type { Message, GenerateCodeResult } from '../types';
 
 // IMPORTANT: INSERT YOUR OPENROUTER API KEY HERE
 // You can get a key from https://openrouter.ai/keys
-const OPENROUTER_API_KEY = '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';
+const OPENROUTER_API_KEY = 'REPLACE_WITH_API_KEY';
 
 const OPENROUTER_API_URL = 'https://openrouter.ai/api/v1/chat/completions';
 const AI_MODEL = 'deepseek/deepseek-r1-0528:free';
